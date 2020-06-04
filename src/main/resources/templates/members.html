@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	 layout:decorate="layout/master.html">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="context">
+		<table>
+		 <thead class="table-dark bd-dark">
+		 <tr>
+		 	<th>Member Id</th>
+		 	<th>Member Name</th>
+		 	<th>Position</th>
+		 	<!-- <th>phoneNumber</th>
+		 	<th>email</th> -->
+		 </tr>
+		 </thead>
+		 <tbody>
+		 <tr th:each="mem :${members}">
+		 	<td th:text="${mem.id}"></td>
+		 	<td th:text="${mem.name}"></td>
+		 	<td th:text="${mem.position}"></td>e
+		 	
+		 </tr>
+		 </tbody>
+		
+		</table>
+	
+	</div>
+</body>
+</html>

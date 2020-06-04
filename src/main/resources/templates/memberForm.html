@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	 layout:decorate="layout/master.html">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="context">
+	
+		<form action="#" th:action="@{/member}" th:object="${member}" method="post">
+		
+			<div class="form-group">
+				<label for="name">Member Name</label>
+				<input type="text"
+				th:field="*{name}"
+				 class="form-control" name="" id="name" placeholder="Enter Member Name" aria-describedby="helpId" />
+				 <!-- <small th:if="${#fields.error('name')}" th:errors="*{name}" class="text-danger"></small> -->
+			</div> 
+			
+			<div class="form-group">
+				<label for="position">Postion</label>
+				<input type="text"
+				th:field="*{position}"
+				 class="form-control" name="" id="position" placeholder="Enter Position" aria-describedby="helpId" />
+				 <!-- <small th:if="${#fields.error('name')}" th:errors="*{name}" class="text-danger"></small> -->
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Add</button>
+		</form>
+	
+	</div>
+</body>
+</html>
